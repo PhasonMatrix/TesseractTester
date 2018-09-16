@@ -1,0 +1,106 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
+for details on configuring this project to bundle and minify static web assets. */
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    /*overflow-x: hidden;*/
+}
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Hide/rearrange for smaller screens */
+@media screen and (max-width: 767px) {
+    /* Hide captions */
+    .carousel-caption {
+        display: none;
+    }
+}
+
+.centred {
+    margin: auto;
+    text-align: center;
+}
+
+.formContainer {
+    background: #eee;
+    box-shadow: rgba(0,0,0,0.5) 0 3px 10px;
+    width: 500px;
+    padding: 15px;
+    margin: auto;
+    text-align: center;
+}
+
+form input {
+    margin: 0 auto;
+    
+}
+
+
+.display-options {
+    display: flex;
+    justify-content: space-around;
+}
+
+label {
+    font-weight: normal;
+}
+
+.document-details { 
+    padding: 5px;
+}
+
+
+.doc-image-container {
+    max-width: 100%;
+    border: solid 1px #ccc;
+    position: relative;
+}
+
+    .doc-image-container img {
+        width: 100%;
+        top: 0;
+        margin: 0;
+    }
+
+    .doc-image-container canvas {
+        width: 100%;
+        right: 5px;
+        border: solid 1px #8cf;
+        position: absolute;
+        display: block;
+        top: 0;
+        margin: 0;
+        z-index: 2;
+    }
+
+#hoverDiv {
+    position: absolute;
+    background: rgb(50,180,255);
+    box-shadow: rgba(0,0,0,0.5) 0 3px 10px;
+    color: #000;
+    font-weight: bold;
+    font-size: 14px;
+    text-align: center;
+    padding: 3px;
+    border-radius: 3px;
+    z-index: 3;
+}
+
+
+#sample-images a img {
+    width: 300px;
+
+    margin: 10px;
+    background: rgb(50,180,255);
+    box-shadow: rgba(0,0,0,0.5) 0 3px 10px;
+}
+
+li{
+    list-style: none;
+
+}

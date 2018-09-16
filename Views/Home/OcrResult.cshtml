@@ -1,0 +1,160 @@
+@{
+    ViewData["Title"] = "OCR Result";
+}
+<br />
+<div class="row">
+    <div class="col-md-5">
+        <form asp-controller="Home" asp-action="Ocr" method="post" enctype="multipart/form-data" id="form">
+            <label>Choose another file</label>
+            <input id="file" type="file" name="file" accept="image/*" style="display:inline" />
+            <h4 id="uploading-message" hidden>uploading ...</h4>
+        </form>
+        <br />
+
+        <div class="document-details">
+            <div class="display-options">
+                <div>
+                    <span>Display options:</span>
+                </div>
+                <div>
+                    <input type="checkbox" id="blocks" name="displayOption" value="blocks" />
+                    <label for="blocks">Blocks</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="paragraphs" name="displayOption" value="paragraphs" />
+                    <label for="paragraphs">Paragraphs</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="lines" name="displayOption" value="lines" />
+                    <label for="lines">Lines</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="words" name="displayOption" value="words" checked />
+                    <label for="words">Words</label>
+                </div>
+            </div>
+
+            <div class="panel-group" id="accordion">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">OCR Details</a>
+                        </h4>
+                    </div>
+
+                    <div id="collapse1" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                            <table class="table table-condensed table-bordered">
+                                <tr>
+                                    <td>Total Word Objects</td>
+                                    <td>@ViewData["WordCount"]</td>
+                                </tr>
+                                <tr>
+                                    <td>Average confidence</td>
+                                    <td>@ViewData["AverageConfidence"]</td>
+                                </tr>
+                                <tr>
+                                    <td>Image dimensions</td>
+                                    <td>@ViewData["ImageDimensions"]</td>
+                                </tr>
+                                <tr>
+                                    <td>Image resolution</td>
+                                    <td>@ViewData["ImageResolution"]</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Raw TSV output from Tesseract 4.0</a>
+                        </h4>
+                    </div>
+                    <div id="collapse2" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <p><i>Note: result from commandline: tesseract stdout -c tessedit_create_tsv=1</i></p>
+                            <pre style="font-size: 10px">@ViewData["RawTsv"]</pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Page Text</a>
+                        </h4>
+                    </div>
+                    <div id="collapse3" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <pre style="font-size: 12px">@ViewData["PageText"]</pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">Results as JSON</a>
+                        </h4>
+                    </div>
+                    <div id="collapse4" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <p><i>Note: Tesseract does not directly output data as JSON </i></p>
+                            <pre style="font-size: 10px">@ViewData["JsonText"]</pre>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div>
+            <p><i>Note: Result can vary based on language used and specific parameters like "page segementation mode".</i></p>
+        </div>
+    </div>
+
+    <div class="col-md-7">
+        <div class="doc-image-container">
+            @if (ViewData["SampleImageFile"] != null)
+            {
+                <img src="~/images/OcrSamples/@ViewData["SampleImageFile"]" id="docImage" style="display:none;" />
+            }
+            else
+            {
+                <img src="~/UserFiles/@ViewData["ImageFileName"]" id="docImage" style="display:none;" />
+            }
+
+            <canvas id="overlayCanvas"></canvas>
+            <canvas id="docCanvas"></canvas>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div id="hoverDiv" hidden>
+    TEST
+</div>
+
+<script src="~/js/tess.js"></script>
+<script>
+    document.getElementById("file").onchange = function () {
+        document.getElementById("uploading-message").hidden = false;
+        document.getElementById("form").submit();
+    };
+
+    let json = @Html.Raw(ViewData["Json"]);
+
+    window.onload = function () {
+        var documentView = new DocumentView(json);
+    }
+
+</script>
+
+
+
+
+
