@@ -154,6 +154,11 @@ namespace TesseractTester.Controllers
         }
 
 
+        public IActionResult About()
+        {
+            return View();
+        }
+
 
         // Dodgy logging. Should use logging provider instead.
         private void Log(string logMessage)

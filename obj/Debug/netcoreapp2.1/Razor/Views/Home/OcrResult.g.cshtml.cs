@@ -69,7 +69,7 @@ using TesseractTester.Models;
             WriteLiteral("<br />\n<div class=\"row\">\n    <div class=\"col-md-5\">\n        ");
             EndContext();
             BeginContext(103, 323, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a9da5bf7f5644ab083d00217dd27fc15", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c1bfbcb6dcbb45e989d5003cea8ad7ca", async() => {
                 BeginContext(202, 217, true);
                 WriteLiteral("\n            <label>Choose another file</label>\n            <input id=\"file\" type=\"file\" name=\"file\" accept=\"image/*\" style=\"display:inline\" />\n            <h4 id=\"uploading-message\" hidden>uploading ...</h4>\n        ");
                 EndContext();
@@ -276,7 +276,7 @@ using TesseractTester.Models;
             WriteLiteral("                ");
             EndContext();
             BeginContext(5379, 98, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "6a77e876b3224870913c5c917c4e56cc", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "c8df30de0b1d4438be38447c7ac48eb1", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -313,7 +313,7 @@ AddHtmlAttributeValue("", 5409, ViewData["SampleImageFile"], 5409, 28, false);
             WriteLiteral("                ");
             EndContext();
             BeginContext(5539, 88, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "78b3f2ac5f43477f88f81d77983a2a16", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "50af72da194e49d1ab44695d0748de48", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -348,7 +348,7 @@ AddHtmlAttributeValue("", 5561, ViewData["ImageFileName"], 5561, 26, false);
             WriteLiteral("\n            <canvas id=\"overlayCanvas\"></canvas>\n            <canvas id=\"docCanvas\"></canvas>\n        </div>\n    </div>\n</div>\n\n\n\n\n<div id=\"hoverDiv\" hidden>\n    TEST\n</div>\n\n");
             EndContext();
             BeginContext(5818, 36, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a1146bedce5b45229af2d3c3276129e3", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1cc5d6d873dd424e819fdb52f79056d6", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
