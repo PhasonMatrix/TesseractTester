@@ -9,7 +9,7 @@ I was interested in seeing if Tesseract could be used as an underlying OCR engin
 
 ### Demo
 
-Currently, you can use this application at http://ec2-54-206-116-198.ap-southeast-2.compute.amazonaws.com
+Currently, you can use this application [here](http://ec2-54-206-27-60.ap-southeast-2.compute.amazonaws.com)
 
 
 
